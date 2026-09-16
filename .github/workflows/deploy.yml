@@ -30,18 +30,20 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
-      - name: Build (base = nome do repositório)
-        run: npm run build
-        env:
-          BASE_URL_OVERRIDE: /${{ github.event.repository.name }}/
-
-      - name: Setup Pages
+      - name: Setup Pages (resolve base_path + valida domínio)
+        id: pages
         uses: actions/configure-pages@v6
         # enablement: true só funciona com um PAT/App token (Settings > Actions secrets > PAGES_PAT).
         # Sem o secret, usa GITHUB_TOKEN e o Pages precisa ser habilitado uma vez em Settings > Pages > Source: GitHub Actions.
         with:
           enablement: ${{ secrets.PAGES_PAT != '' }}
           token: ${{ secrets.PAGES_PAT || github.token }}
+
+      - name: Build (base automática do configure-pages)
+        run: npm run build
+        env:
+          # "/IPSO-website" sem domínio; "" (raiz) com domínio customizado
+          BASE_URL_OVERRIDE: ${{ steps.pages.outputs.base_path }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

@@ -2,9 +2,17 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-// No GitHub Pages (repo do usuário), o site fica sob /nome-do-repositorio/.
-// O workflow de deploy injeta BASE_URL_OVERRIDE com o nome real do repositório.
+// A base vem do output "base_path" do actions/configure-pages:
+// - sem domínio customizado: "/nome-do-repositorio/"
+// - com domínio customizado: "/" (raiz)
+const baseOverride = process.env.BASE_URL_OVERRIDE;
+const base = baseOverride
+  ? baseOverride.endsWith("/")
+    ? baseOverride
+    : `${baseOverride}/`
+  : "/";
+
 export default defineConfig({
-  base: process.env.BASE_URL_OVERRIDE || "/",
+  base,
   plugins: [react(), tailwindcss()],
 });
