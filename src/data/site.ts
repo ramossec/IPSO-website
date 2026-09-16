@@ -11,7 +11,7 @@ export const siteConfig = {
     "Olá, vim do site gostaria de um orçamento",
 
   instagram: "https://www.instagram.com/ipso.ocupacional/",
-  areaCliente: "https://sistema.soc.com.br/WebSoc/",
+  areaCliente: "https://sistema.grosafety.com.br/groweb/login",
 
   address: {
     street: "Rua Exemplo, 123, Sala 4",
