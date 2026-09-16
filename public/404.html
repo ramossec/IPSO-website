@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>IPSO | Consultoria em Medicina e Segurança do Trabalho</title>
+    <script>
+      // GitHub Pages serve este 404.html para rotas desconhecidas do React Router.
+      // Salvamos o caminho completo e redirecionamos para a home; o app restaura a rota.
+      sessionStorage.setItem("redirect", window.location.pathname);
+      var base =
+        window.location.pathname.split("/").length > 2
+          ? "/" + window.location.pathname.split("/")[1]
+          : "";
+      window.location.replace(base + "/");
+    </script>
+  </head>
+  <body></body>
+</html>
