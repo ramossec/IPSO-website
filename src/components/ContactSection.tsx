@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { MessageCircle, Send, ShieldCheck } from "lucide-react";
-import { whatsappLink } from "../data/site";
+import { siteConfig, whatsappLink } from "../data/site";
 
 export default function ContactSection() {
   const [name, setName] = useState("");
@@ -10,9 +10,7 @@ export default function ContactSection() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const text = `Nome: ${name}%0AEmail: ${email}%0AMensagem: ${message}`;
-    const link = `https://wa.me/${
-      import.meta.env.VITE_WHATSAPP_NUMBER || "5511963010000"
-    }?text=${text}`;
+    const link = `https://wa.me/${siteConfig.whatsappNumber}?text=${text}`;
     window.open(link, "_blank");
   };
 

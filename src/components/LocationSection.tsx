@@ -27,6 +27,8 @@ export default function LocationSection() {
                     <br />
                     {siteConfig.address.district}, {siteConfig.address.city} -{" "}
                     {siteConfig.address.state}
+                    <br />
+                    CEP {siteConfig.address.zip}
                   </p>
                 </div>
               </div>
@@ -40,13 +42,17 @@ export default function LocationSection() {
                   <p className="mt-1 text-sm text-slate-600">
                     Segunda a sexta, 8h às 18h
                     <br />
+                    <a href={siteConfig.phoneHref} className="text-ipso-teal hover:text-ipso-teal-light">
+                      Telefone: {siteConfig.phone}
+                    </a>
+                    <br />
                     <a
                       href={`https://wa.me/${siteConfig.whatsappNumber}`}
                       target="_blank"
                       rel="noreferrer"
                       className="text-ipso-teal hover:text-ipso-teal-light"
                     >
-                      WhatsApp: {siteConfig.whatsappNumber}
+                      WhatsApp: {siteConfig.whatsappDisplay}
                     </a>
                   </p>
                 </div>

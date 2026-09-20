@@ -99,6 +99,12 @@ export default function Footer() {
                 {siteConfig.address.district}, {siteConfig.address.city} -{" "}
                 {siteConfig.address.state}
               </li>
+              <li>CEP {siteConfig.address.zip}</li>
+              <li>
+                <a href={siteConfig.phoneHref} className="transition-colors hover:text-ipso-teal-light">
+                  Telefone: {siteConfig.phone}
+                </a>
+              </li>
               <li>
                 <a
                   href={`https://wa.me/${siteConfig.whatsappNumber}`}
@@ -106,7 +112,7 @@ export default function Footer() {
                   rel="noreferrer"
                   className="transition-colors hover:text-ipso-teal-light"
                 >
-                  WhatsApp: {siteConfig.whatsappNumber}
+                  WhatsApp: {siteConfig.whatsappDisplay}
                 </a>
               </li>
             </ul>
@@ -124,8 +130,8 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 sm:flex-row">
           <p className="text-xs text-white/60">
-            © {new Date().getFullYear()} {siteConfig.name} Consultoria Ocupacional. Todos os
-            direitos reservados.
+            © {new Date().getFullYear()} {siteConfig.legalName}. Todos os
+            direitos reservados. CNPJ: {siteConfig.cnpj}
           </p>
           <a
             href="https://buscasst.com.br"

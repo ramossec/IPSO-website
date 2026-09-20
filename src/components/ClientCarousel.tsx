@@ -1,17 +1,32 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { asset } from "../utils/asset";
 
 const clients = [
-  { name: "Metalúrgica Alfa", tone: "text-slate-700" },
-  { name: "Logística Beta", tone: "text-slate-500" },
-  { name: "Construção Garça", tone: "text-slate-600" },
-  { name: "Alimentos Vega", tone: "text-slate-700" },
-  { name: "Transportes Zulu", tone: "text-slate-500" },
-  { name: "Química Nitro", tone: "text-slate-600" },
-  { name: "Autopeças Sigma", tone: "text-slate-700" },
-  { name: "Plásticos Cristal", tone: "text-slate-500" },
-  { name: "Papel & Cia", tone: "text-slate-600" },
+  { name: "HH Acessórios", file: "hh-acessorios" },
+  { name: "SSOil Energy", file: "ssoil-energy" },
+  { name: "Sinter", file: "sinter" },
+  { name: "COC São João", file: "coc-sao-joao" },
+  { name: "Dacota Cabos Elétricos", file: "dacota" },
+  { name: "Biselli Engenharia", file: "biselli" },
+  { name: "Sacaria Tonon", file: "sacaria-tonon" },
+  { name: "Hurmez", file: "hurmez" },
+  { name: "S.Lima Usinagem", file: "s-lima" },
+  { name: "Skp Shake", file: "skp-shake" },
+  { name: "Dr. Prevent", file: "dr-prevent" },
+  { name: "Unifeob", file: "unifeob" },
+  { name: "Kohler", file: "kohler" },
+  { name: "GeHfer Comercial", file: "gehfer" },
+  { name: "Mais Saúde Plano", file: "mais-saude" },
+  { name: "CBL Laminação Brasileira de Cobre", file: "cbl" },
+  { name: "Delaplastic", file: "delaplastic" },
+  { name: "Cimentolândia", file: "cimentolandia" },
+  { name: "Docol", file: "docol" },
+  { name: "Elecnor Brasil", file: "elecnor" },
+  { name: "Delman Industrial", file: "delman" },
+  { name: "Sieng", file: "sieng" },
+  { name: "Grupo Santa Casa de Franca", file: "santa-casa-franca" },
 ];
 
 export default function ClientCarousel() {
@@ -37,10 +52,14 @@ export default function ClientCarousel() {
             }}
           >
             {clients.map((c) => (
-              <SwiperSlide key={c.name}>
-                <span className={`select-none text-xl font-extrabold tracking-tight ${c.tone}`}>
-                  {c.name}
-                </span>
+              <SwiperSlide key={c.file}>
+                <img
+                  src={asset(`images/clientes/${c.file}.svg`)}
+                  alt={c.name}
+                  title={c.name}
+                  loading="lazy"
+                  className="h-14 w-auto max-w-[140px] select-none object-contain"
+                />
               </SwiperSlide>
             ))}
           </Swiper>
