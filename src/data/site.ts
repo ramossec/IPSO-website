@@ -13,6 +13,7 @@ export const siteConfig = {
   // Telefone fixo cadastrado na Receita Federal.
   phone: "(19) 9745-9888",
   phoneHref: "tel:+551997459888",
+  email: "atendimento@ipsoocupacional.com.br",
 
   // Número de WhatsApp no formato internacional (somente dígitos).
   whatsappNumber: "5519996901029",

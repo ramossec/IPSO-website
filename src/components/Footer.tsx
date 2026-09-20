@@ -101,6 +101,11 @@ export default function Footer() {
               </li>
               <li>CEP {siteConfig.address.zip}</li>
               <li>
+                <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-ipso-teal-light">
+                  {siteConfig.email}
+                </a>
+              </li>
+              <li>
                 <a href={siteConfig.phoneHref} className="transition-colors hover:text-ipso-teal-light">
                   Telefone: {siteConfig.phone}
                 </a>

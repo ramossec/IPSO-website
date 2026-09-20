@@ -38,7 +38,7 @@ export default function AboutSection() {
             />
             <div className="absolute -bottom-8 left-6 flex items-center gap-4 rounded-2xl bg-ipso-dark p-6 text-white shadow-2xl">
               <span className="text-5xl font-extrabold text-ipso-teal-light">
-                15+
+                12+
               </span>
               <div className="text-sm font-medium leading-tight">
                 anos de
@@ -61,7 +61,7 @@ export default function AboutSection() {
               <p>
                 A <strong className="text-ipso-navy">IPSO</strong> é uma empresa
                 especializada na prestação de serviços de Segurança e Medicina
-                do trabalho, com mais de 15 anos de experiência dos
+                do trabalho, com mais de 12 anos de experiência dos
                 profissionais na área.
               </p>
               <p>

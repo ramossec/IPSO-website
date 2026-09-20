@@ -42,6 +42,10 @@ export default function LocationSection() {
                   <p className="mt-1 text-sm text-slate-600">
                     Segunda a sexta, 8h às 18h
                     <br />
+                    <a href={`mailto:${siteConfig.email}`} className="text-ipso-teal hover:text-ipso-teal-light">
+                      {siteConfig.email}
+                    </a>
+                    <br />
                     <a href={siteConfig.phoneHref} className="text-ipso-teal hover:text-ipso-teal-light">
                       Telefone: {siteConfig.phone}
                     </a>

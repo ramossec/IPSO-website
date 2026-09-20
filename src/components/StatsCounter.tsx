@@ -61,7 +61,7 @@ export default function StatsCounter() {
           {stats.map((s, i) => (
             <div key={s.label} className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
               <div className="text-5xl font-extrabold text-ipso-teal-light">
-                <Counter end={i === 0 ? 3 : i === 1 ? 5 : i === 2 ? 99 : 15} />
+                <Counter end={i === 0 ? 3 : i === 1 ? 5 : i === 2 ? 99 : 12} />
                 {s.suffix}
               </div>
               <div className="mt-2 text-sm font-medium text-white/75">{s.label}</div>
