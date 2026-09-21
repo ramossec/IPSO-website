@@ -31,7 +31,7 @@ const articles = [
 
 export default function ArticlesSection() {
   return (
-    <section className="bg-ipso-light py-24">
+    <section className="bg-ipso-light py-16 sm:py-24">
       <div className="container-ipso">
         <div className="text-center">
           <h6 className="text-sm font-bold uppercase tracking-widest text-ipso-teal">
@@ -42,7 +42,7 @@ export default function ArticlesSection() {
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-8 sm:mt-12 lg:grid-cols-3">
           {articles.map((a) => (
             <article
               key={a.title}
@@ -73,7 +73,7 @@ export default function ArticlesSection() {
                   href={whatsappLink("Gostaria de mais informações sobre: " + a.title)}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ipso-teal transition-colors hover:text-ipso-teal-light"
+                  className="mt-3 inline-flex min-h-11 items-center gap-2 py-2 text-sm font-semibold text-ipso-teal transition-colors hover:text-ipso-teal-light"
                 >
                   {a.cta}
                   <ArrowRight className="h-4 w-4" />

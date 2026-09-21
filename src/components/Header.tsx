@@ -13,6 +13,8 @@ const navLinks = [
   { label: "Blog", to: "/blog" },
 ];
 
+const isAnchor = (to: string) => to.startsWith("/#");
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -32,6 +34,13 @@ export default function Header() {
   const navItemClass = ({ isActive }: { isActive: boolean }) =>
     `text-sm font-medium transition-colors duration-200 ${
       isActive ? "text-ipso-teal-light" : "text-white/85 hover:text-ipso-teal-light"
+    }`;
+
+  const mobileItemClass = ({ isActive }: { isActive: boolean }) =>
+    `rounded-md px-3 py-3 text-sm font-medium transition-colors ${
+      isActive
+        ? "bg-white/10 text-ipso-teal-light"
+        : "text-white/85 hover:bg-white/5 hover:text-ipso-teal-light"
     }`;
 
   return (
@@ -55,17 +64,18 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) =>
-            link.to === "/esocial" || link.to === "/blog" || link.to === "/" ? (
-              <NavLink key={link.label} to={link.to} className={navItemClass} end={link.to === "/"}>
-                {link.label}
-              </NavLink>
-            ) : (
-              <NavLink
+            isAnchor(link.to) ? (
+              // Âncoras da Home não têm estado "ativo" (NavLink compara só o pathname).
+              <Link
                 key={link.label}
                 to="/"
-                className={navItemClass}
+                className={navItemClass({ isActive: false })}
                 state={{ scrollTo: link.to.slice(2) }}
               >
+                {link.label}
+              </Link>
+            ) : (
+              <NavLink key={link.label} to={link.to} className={navItemClass} end={link.to === "/"}>
                 {link.label}
               </NavLink>
             )
@@ -83,7 +93,9 @@ export default function Header() {
         {/* Mobile hamburger */}
         <button
           type="button"
-          aria-label="Abrir menu"
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
           className="rounded-md p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
         >
@@ -93,28 +105,29 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-white/10 bg-ipso-dark/95 backdrop-blur lg:hidden">
+        <div id="mobile-menu" className="border-t border-white/10 bg-ipso-dark/95 backdrop-blur lg:hidden">
           <nav className="container-ipso flex flex-col gap-1 py-4">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.label}
-                to={link.to}
-                state={
-                  link.to.startsWith("/#")
-                    ? { scrollTo: link.to.slice(2) }
-                    : undefined
-                }
-                className={({ isActive }) =>
-                  `rounded-md px-3 py-3 text-sm font-medium transition-colors ${
-                    isActive
-                      ? "bg-white/10 text-ipso-teal-light"
-                      : "text-white/85 hover:bg-white/5 hover:text-ipso-teal-light"
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
+            {navLinks.map((link) =>
+              isAnchor(link.to) ? (
+                <Link
+                  key={link.label}
+                  to="/"
+                  state={{ scrollTo: link.to.slice(2) }}
+                  className={mobileItemClass({ isActive: false })}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <NavLink
+                  key={link.label}
+                  to={link.to}
+                  end={link.to === "/"}
+                  className={mobileItemClass}
+                >
+                  {link.label}
+                </NavLink>
+              )
+            )}
             <a
               href={siteConfig.areaCliente}
               target="_blank"

@@ -22,15 +22,8 @@ const highlights = [
 
 export default function ServicesOverview() {
   return (
-    <section id="servicos" className="relative overflow-hidden bg-ipso-dark py-24">
-      {/* Shape top */}
-      <div className="absolute inset-x-0 top-0">
-        <svg viewBox="0 0 1000 100" preserveAspectRatio="none" className="block h-12 w-full text-ipso-dark">
-          <path d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3c-10.2,1.1-22.6,1.4-50.1,7.4c-27.2,6.3-58.2,16.6-79.4,24.7c-41.3,15.9-94.9,21.9-134,22.6C72,58.2,0,25.8,0,25.8V100h1000V65.3c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z" fill="currentColor" />
-        </svg>
-      </div>
-
-      <div className="container-ipso pt-4">
+    <section id="servicos" className="relative overflow-hidden bg-ipso-dark py-16 sm:py-24">
+      <div className="container-ipso">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto_1fr]">
           {/* Texto */}
           <div>

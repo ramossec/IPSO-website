@@ -54,11 +54,27 @@
 
 html {
   scroll-behavior: smooth;
+  /* Safari iOS ignora overflow-x só no body; precisa nos dois. */
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
   @apply bg-white text-ipso-gray font-sans antialiased;
   overflow-x: hidden;
+}
+
+/* Esconde a barra de rolagem em listas com scroll horizontal (tabs no mobile) */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 
 ::selection {

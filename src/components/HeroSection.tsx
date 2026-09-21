@@ -4,10 +4,10 @@ import { images } from "../data/images";
 
 export default function HeroSection() {
   return (
-    <section className="relative isolate flex min-h-[92vh] items-center overflow-hidden bg-ipso-dark">
+    <section className="relative isolate flex min-h-[92svh] items-center overflow-hidden bg-ipso-dark">
       {/* Background slideshow */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 animate-ken-burns">
+        <div className="absolute inset-0 animate-ken-burns motion-reduce:animate-none">
           <img
             src={images.heroWorkers}
             alt="Trabalhadores com EPI"
@@ -17,24 +17,24 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-ipso-dark/95 via-ipso-dark/80 to-ipso-navy/60" />
       </div>
 
-      <div className="container-ipso py-32">
+      <div className="container-ipso py-28 sm:py-32">
         <div className="max-w-3xl">
-          <span className="inline-block rounded-full border border-ipso-teal-light/40 bg-ipso-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-ipso-teal-light animate-fade-in">
+          <span className="inline-block rounded-full border border-ipso-teal-light/40 bg-ipso-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-ipso-teal-light animate-fade-in motion-reduce:animate-none">
             Saúde • Segurança • Conformidade
           </span>
 
-          <h1 className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl animate-fade-in-up">
+          <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl sm:leading-tight lg:text-6xl animate-fade-in-up motion-reduce:animate-none">
             Consultoria em Medicina e{" "}
             <span className="text-ipso-teal-light">Segurança do Trabalho</span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85 animate-fade-in-up">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg animate-fade-in-up motion-reduce:animate-none">
             Atendemos as empresas realizando todos os exames ocupacionais,
             treinamentos e laudos exigidos pelo eSocial, como PGR, PCMSO, LTCAT
             e muito mais.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row animate-fade-in-up">
+          <div className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row animate-fade-in-up motion-reduce:animate-none">
             <a
               href={whatsappLink()}
               target="_blank"

@@ -56,7 +56,7 @@ const posts = [
 export default function Blog() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-ipso-dark py-32">
+      <section className="relative isolate overflow-hidden bg-ipso-dark py-24 sm:py-32">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_80%_10%,rgba(8,145,178,0.35),transparent_50%)]" />
         <div className="container-ipso pt-8">
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
@@ -69,7 +69,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="bg-ipso-light py-20">
+      <section className="bg-ipso-light py-14 sm:py-20">
         <div className="container-ipso">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((p) => (
@@ -98,12 +98,12 @@ export default function Blog() {
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
                     {p.excerpt}
                   </p>
-                  <div className="mt-5 flex items-center gap-4">
+                  <div className="mt-3 flex items-center gap-4">
                     <a
                       href={whatsappLink(`Gostaria de mais informações sobre: ${p.title}`)}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-ipso-teal transition-colors hover:text-ipso-teal-light"
+                      className="inline-flex min-h-11 items-center gap-2 py-2 text-sm font-semibold text-ipso-teal transition-colors hover:text-ipso-teal-light"
                     >
                       Fale com um especialista
                       <ArrowRight className="h-4 w-4" />

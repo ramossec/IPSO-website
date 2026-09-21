@@ -3,7 +3,7 @@ import { siteConfig } from "../data/site";
 
 export default function LocationSection() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-16 sm:py-24">
       <div className="container-ipso">
         <div className="grid gap-12 lg:grid-cols-[auto_1fr]">
           {/* Info */}
@@ -69,7 +69,7 @@ export default function LocationSection() {
             <iframe
               src={siteConfig.address.mapsUrl}
               title="Mapa - IPSO Consultoria"
-              className="h-full min-h-[380px] w-full"
+              className="h-full min-h-75 w-full sm:min-h-95"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen

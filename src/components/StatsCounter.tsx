@@ -43,7 +43,7 @@ function Counter({ end }: { end: number }) {
 
 export default function StatsCounter() {
   return (
-    <section className="relative overflow-hidden bg-ipso-dark py-24">
+    <section className="relative overflow-hidden bg-ipso-dark py-16 sm:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(8,145,178,0.25),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(34,211,238,0.15),transparent_40%)]" />
 
       <div className="container-ipso relative">
@@ -57,10 +57,10 @@ export default function StatsCounter() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-8 text-center lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-4 text-center sm:mt-12 sm:gap-8 lg:grid-cols-4">
           {stats.map((s, i) => (
-            <div key={s.label} className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-              <div className="text-5xl font-extrabold text-ipso-teal-light">
+            <div key={s.label} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur sm:p-8">
+              <div className="text-4xl font-extrabold text-ipso-teal-light sm:text-5xl">
                 <Counter end={i === 0 ? 3 : i === 1 ? 5 : i === 2 ? 99 : 12} />
                 {s.suffix}
               </div>

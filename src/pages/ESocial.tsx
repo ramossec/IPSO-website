@@ -92,7 +92,7 @@ export default function ESocial() {
           <div className="absolute inset-0 bg-gradient-to-r from-ipso-dark/95 via-ipso-dark/85 to-ipso-navy/70" />
         </div>
         <div className="container-ipso pt-24">
-          <h1 className="text-5xl font-extrabold text-white">
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
             <span className="text-ipso-teal-light">e</span>Social
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85">
@@ -108,7 +108,7 @@ export default function ESocial() {
       </section>
 
       {/* Features */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-14 sm:py-20">
         <div className="container-ipso">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {featureHighlights.map((f) => (
@@ -130,7 +130,7 @@ export default function ESocial() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-ipso-light py-20">
+      <section className="bg-ipso-light py-14 sm:py-20">
         <div className="container-ipso max-w-4xl">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-ipso-navy sm:text-4xl">
@@ -183,7 +183,7 @@ export default function ESocial() {
       </section>
 
       {/* Layouts */}
-      <section className="bg-ipso-dark py-20">
+      <section className="bg-ipso-dark py-14 sm:py-20">
         <div className="container-ipso">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">

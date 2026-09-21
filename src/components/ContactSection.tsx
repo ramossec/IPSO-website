@@ -9,13 +9,15 @@ export default function ContactSection() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const text = `Nome: ${name}%0AEmail: ${email}%0AMensagem: ${message}`;
+    const text = encodeURIComponent(
+      `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`
+    );
     const link = `https://wa.me/${siteConfig.whatsappNumber}?text=${text}`;
     window.open(link, "_blank");
   };
 
   return (
-    <section id="contato" className="relative overflow-hidden bg-ipso-navy py-24">
+    <section id="contato" className="relative overflow-hidden bg-ipso-navy py-16 sm:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_15%,rgba(34,211,238,0.2),transparent_50%)]" />
 
       <div className="container-ipso relative">
@@ -58,9 +60,9 @@ export default function ContactSection() {
           {/* Formulário */}
           <form
             onSubmit={handleSubmit}
-            className="rounded-2xl bg-white p-8 shadow-2xl sm:p-10"
+            className="rounded-2xl bg-white p-6 shadow-2xl sm:p-10"
           >
-            <h3 className="text-2xl font-extrabold text-ipso-navy">
+            <h3 className="text-xl font-extrabold text-ipso-navy sm:text-2xl">
               Solicite um orçamento para sua empresa
             </h3>
 
@@ -76,7 +78,7 @@ export default function ContactSection() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Seu nome completo"
-                  className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm outline-none transition-colors focus:border-ipso-teal focus:ring-2 focus:ring-ipso-teal/20"
+                  className="w-full rounded-lg border border-slate-200 px-4 py-3 text-base outline-none sm:text-sm transition-colors focus:border-ipso-teal focus:ring-2 focus:ring-ipso-teal/20"
                 />
               </div>
 
@@ -91,7 +93,7 @@ export default function ContactSection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="seu@email.com"
-                  className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm outline-none transition-colors focus:border-ipso-teal focus:ring-2 focus:ring-ipso-teal/20"
+                  className="w-full rounded-lg border border-slate-200 px-4 py-3 text-base outline-none sm:text-sm transition-colors focus:border-ipso-teal focus:ring-2 focus:ring-ipso-teal/20"
                 />
               </div>
 
@@ -106,7 +108,7 @@ export default function ContactSection() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Conte um pouco sobre sua necessidade..."
-                  className="w-full resize-none rounded-lg border border-slate-200 px-4 py-3 text-sm outline-none transition-colors focus:border-ipso-teal focus:ring-2 focus:ring-ipso-teal/20"
+                  className="w-full resize-none rounded-lg border border-slate-200 px-4 py-3 text-base outline-none sm:text-sm transition-colors focus:border-ipso-teal focus:ring-2 focus:ring-ipso-teal/20"
                 />
               </div>
 

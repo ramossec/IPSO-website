@@ -81,7 +81,7 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-16 sm:py-24">
       <div className="container-ipso">
         <div className="max-w-2xl">
           <h6 className="text-sm font-bold uppercase tracking-widest text-ipso-teal">
@@ -129,7 +129,7 @@ export default function ServicesGrid() {
                   href={whatsappLink(`Olá, quero um orçamento para: ${s.title}`)}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-block text-sm font-semibold text-ipso-teal transition-colors hover:text-ipso-teal-light"
+                  className="mt-4 inline-flex min-h-11 items-center py-2 text-sm font-semibold text-ipso-teal transition-colors hover:text-ipso-teal-light"
                 >
                   Solicitar orçamento →
                 </a>

@@ -41,14 +41,14 @@ export default function ClientCarousel() {
           <Swiper
             className="client-swiper"
             modules={[Autoplay]}
-            slidesPerView={3}
+            slidesPerView={2.5}
             loop
             speed={200}
             autoplay={{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-            spaceBetween={50}
+            spaceBetween={24}
             breakpoints={{
-              640: { slidesPerView: 4 },
-              1024: { slidesPerView: 6 },
+              640: { slidesPerView: 4, spaceBetween: 40 },
+              1024: { slidesPerView: 6, spaceBetween: 50 },
             }}
           >
             {clients.map((c) => (
@@ -58,7 +58,7 @@ export default function ClientCarousel() {
                   alt={c.name}
                   title={c.name}
                   loading="lazy"
-                  className="h-14 w-auto max-w-[140px] select-none object-contain"
+                  className="h-12 w-auto max-w-30 select-none object-contain sm:h-14 sm:max-w-35"
                 />
               </SwiperSlide>
             ))}

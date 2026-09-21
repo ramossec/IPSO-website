@@ -25,9 +25,9 @@ const colRight = [
 
 export default function AboutSection() {
   return (
-    <section id="sobre" className="bg-ipso-light py-24">
+    <section id="sobre" className="bg-ipso-light py-16 sm:py-24">
       <div className="container-ipso">
-        <div className="grid items-center gap-14 lg:grid-cols-2">
+        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-14">
           {/* Imagem + badge experiência */}
           <div className="relative">
             <div className="absolute -left-4 -top-4 h-24 w-24 rounded-tr-3xl border-l-4 border-t-4 border-ipso-teal" />
@@ -36,8 +36,8 @@ export default function AboutSection() {
               alt="Equipe IPSO em campo"
               className="relative w-full rounded-2xl object-cover shadow-2xl"
             />
-            <div className="absolute -bottom-8 left-6 flex items-center gap-4 rounded-2xl bg-ipso-dark p-6 text-white shadow-2xl">
-              <span className="text-5xl font-extrabold text-ipso-teal-light">
+            <div className="absolute -bottom-8 left-6 flex items-center gap-4 rounded-2xl bg-ipso-dark p-4 text-white shadow-2xl sm:p-6">
+              <span className="text-4xl font-extrabold text-ipso-teal-light sm:text-5xl">
                 12+
               </span>
               <div className="text-sm font-medium leading-tight">

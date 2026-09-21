@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import { MessageCircle, CheckCircle2, CalendarPlus, PenLine } from "lucide-react";
 import { whatsappLink } from "../data/site";
 import { images } from "../data/images";
@@ -115,8 +115,14 @@ export default function ExamsTabs() {
   const [active, setActive] = useState(0);
   const exam = exams[active];
 
+  const selectTab = (i: number, e: MouseEvent<HTMLButtonElement>) => {
+    setActive(i);
+    // No mobile a lista rola horizontalmente: mantém a pílula ativa visível.
+    e.currentTarget.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+  };
+
   return (
-    <section id="exames" className="bg-ipso-light py-24">
+    <section id="exames" className="bg-ipso-light py-16 sm:py-24">
       <div className="container-ipso">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-ipso-navy sm:text-4xl">
@@ -128,14 +134,22 @@ export default function ExamsTabs() {
           </p>
         </div>
 
-        {/* Tabs */}
-        <div className="mt-10 flex flex-wrap justify-center gap-2.5">
+        {/* Tabs: linha única com scroll horizontal no mobile, wrap centralizado a partir de sm */}
+        <div
+          role="tablist"
+          aria-label="Tipos de exame"
+          className="scrollbar-none -mx-5 mt-8 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:mt-10 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0 sm:pb-0"
+        >
           {exams.map((e, i) => (
             <button
               key={e.id}
               type="button"
-              onClick={() => setActive(i)}
-              className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
+              role="tab"
+              id={`tab-${e.id}`}
+              aria-selected={i === active}
+              aria-controls={`panel-${e.id}`}
+              onClick={(ev) => selectTab(i, ev)}
+              className={`min-h-11 shrink-0 snap-start rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
                 i === active
                   ? "bg-ipso-teal text-white shadow-lg shadow-ipso-teal/30"
                   : "bg-white text-ipso-navy ring-1 ring-slate-200 hover:ring-ipso-teal"
@@ -147,10 +161,15 @@ export default function ExamsTabs() {
         </div>
 
         {/* Content */}
-        <div className="mt-10 overflow-hidden rounded-2xl bg-white shadow-2xl shadow-slate-900/5">
+        <div
+          role="tabpanel"
+          id={`panel-${exam.id}`}
+          aria-labelledby={`tab-${exam.id}`}
+          className="mt-8 overflow-hidden rounded-2xl bg-white shadow-2xl shadow-slate-900/5 sm:mt-10"
+        >
           <div className="grid lg:grid-cols-2">
             {/* Texto */}
-            <div className="p-8 sm:p-10">
+            <div className="p-6 sm:p-10">
               <span className="text-xs font-bold uppercase tracking-widest text-ipso-teal">
                 Ocupacional
               </span>
@@ -217,7 +236,8 @@ export default function ExamsTabs() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noreferrer"
-                className="absolute bottom-5 right-5 inline-flex items-center gap-2 rounded-md bg-ipso-whatsapp px-5 py-3 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-ipso-whatsapp-dark"
+                // Fica à esquerda no mobile para não colidir com o botão flutuante do WhatsApp.
+                className="absolute bottom-5 left-5 inline-flex min-h-11 items-center gap-2 rounded-md bg-ipso-whatsapp px-5 py-3 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-ipso-whatsapp-dark sm:left-auto sm:right-5"
               >
                 <MessageCircle className="h-4 w-4" />
                 Tirar dúvidas
