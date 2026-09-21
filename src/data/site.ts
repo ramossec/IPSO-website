@@ -21,7 +21,7 @@ export const siteConfig = {
   whatsappMessage:
     "Olá, vim do site gostaria de um orçamento",
 
-  instagram: "https://www.instagram.com/ipso.ocupacional/",
+  instagram: "https://www.instagram.com/ipsosaudeocupacional/",
   areaCliente: "https://sistema.grosafety.com.br/groweb/login",
 
   address: {
