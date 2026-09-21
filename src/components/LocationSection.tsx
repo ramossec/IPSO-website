@@ -40,7 +40,7 @@ export default function LocationSection() {
                 <div>
                   <p className="font-semibold text-ipso-navy">Atendimento</p>
                   <p className="mt-1 text-sm text-slate-600">
-                    Segunda a sexta, 8h às 18h
+                    Segunda a sexta, 7h às 18h
                     <br />
                     <a href={`mailto:${siteConfig.email}`} className="text-ipso-teal hover:text-ipso-teal-light">
                       {siteConfig.email}

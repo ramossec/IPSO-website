@@ -1,4 +1,9 @@
 // ===== Imagens (CDN Unsplash – substituir pelas fotos reais da IPSO) =====
+// Fotos dos exames ficam em public/images/exames (banco de imagens livre):
+//   clinico, acuidade-visual, ecg, raio-x, toxicologico → Pexels (licença Pexels, uso livre)
+//   audiometria → Wikimedia Commons "Exame de Audiometria.jpg" (CC0)
+//   espirometria → Wikimedia Commons "DoingSpirometry.JPG" (CC BY-SA 3.0)
+import { asset } from "../utils/asset";
 
 export const images = {
   heroWorkers:
@@ -9,22 +14,15 @@ export const images = {
     "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=1200&auto=format&fit=crop",
   services:
     "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=900&auto=format&fit=crop",
-  examClinical:
-    "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=900&auto=format&fit=crop",
-  examAudiometry:
-    "https://images.unsplash.com/photo-1581594549595-35f6edc7b762?q=80&w=900&auto=format&fit=crop",
-  examSpirometry:
-    "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=900&auto=format&fit=crop",
-  examVision:
-    "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=900&auto=format&fit=crop",
-  examEcg:
-    "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=900&auto=format&fit=crop",
-  examXray:
-    "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=900&auto=format&fit=crop",
+  examClinical: asset("images/exames/clinico.jpg"),
+  examAudiometry: asset("images/exames/audiometria.jpg"),
+  examSpirometry: asset("images/exames/espirometria.jpg"),
+  examVision: asset("images/exames/acuidade-visual.jpg"),
+  examEcg: asset("images/exames/ecg.jpg"),
+  examXray: asset("images/exames/raio-x.jpg"),
   examLab:
-    "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=900&auto=format&fit=crop",
-  examToxic:
-    "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=900&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1581594549595-35f6edc7b762?q=80&w=900&auto=format&fit=crop",
+  examToxic: asset("images/exames/toxicologico.jpg"),
   articleAep:
     "https://images.unsplash.com/photo-1472745433479-4556f22e32c2?q=80&w=800&auto=format&fit=crop",
   articleSafety:

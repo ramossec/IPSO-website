@@ -10,9 +10,9 @@ export const siteConfig = {
   tagline: "Consultoria em Medicina e Segurança do Trabalho",
   cnpj: "66.894.621/0001-74",
 
-  // Telefone fixo cadastrado na Receita Federal.
-  phone: "(19) 9745-9888",
-  phoneHref: "tel:+551997459888",
+  // Telefone cadastrado na Receita Federal.
+  phone: "(19) 99745-9888",
+  phoneHref: "tel:+5519997459888",
   email: "atendimento@ipsoocupacional.com.br",
 
   // Número de WhatsApp no formato internacional (somente dígitos).
