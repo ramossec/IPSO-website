@@ -57,7 +57,7 @@ export default function Header() {
           <img
             src={asset("images/logo.png")}
             alt="IPSO"
-            className="h-14 w-auto drop-shadow"
+            className="h-16 w-auto drop-shadow lg:h-18"
           />
         </Link>
 
